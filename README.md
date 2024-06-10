@@ -1,4 +1,4 @@
-## Course End Project: Bake My Cake
+## Course End Project: Bake My Cake - Phase I
 
 ### Context
 
@@ -48,7 +48,7 @@ Note: Below is the preview or template of the React application – Bake My Cake
 - Fork the boilerplate into your own workspace.​​​​​​
 - Clone the forked boilerplate into your local system.
 - List of cake data is available inside `data/cakes.json` file.
-- Cake related images are available in the `images` folder of the boilerplate.​
+- Cake related images are available in the `cakes` folder of the boilerplate.​
 - Alternatively, you can generate images of various cakes, cookies and brownies using Bing Image Creator tool: `https://www.bing.com/create​`
     - Login with email-id / phone to the above website to start with image creation.​
 - Copy the images inside the `public` folder of the solution code and use them in the project.
