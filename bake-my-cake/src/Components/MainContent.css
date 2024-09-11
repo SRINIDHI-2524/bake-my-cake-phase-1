@@ -1,0 +1,45 @@
+.logo{
+    width:50%;
+    height:auto;
+   
+
+    
+   
+
+}
+.Main{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content:space-around;
+}
+.Button{
+    background-color: antiquewhite; 
+    border-radius: 5%;
+    border: 2px solid yellow;
+    
+
+}
+.Child{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+.Display{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    justify-content:space-evenly;
+    margin-top: 90px;
+
+
+    
+}
+
+.pp{
+    margin-top: 0; 
+    /* padding: 0;  */
+}
