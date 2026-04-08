@@ -16,7 +16,13 @@ function App() {
   useEffect(() => {
     axios.get('http://localhost:5000/cakes')
       .then(res => setProducts(res.data))
-      .catch(err => { console.error(err); setError(err); });
+      .catch(() => {
+        // Fallback to local data when json-server is not running (e.g. Netlify deploy)
+        fetch('/data/cakes.json')
+          .then(r => r.json())
+          .then(d => setProducts(d.cakes))
+          .catch(err => setError(err));
+      });
   }, []);
 
   const displayedProducts = filteredProduct

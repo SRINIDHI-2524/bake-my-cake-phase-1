@@ -1,0 +1,9 @@
+[build]
+  base    = "bake-my-cake"
+  command = "npm run build"
+  publish = "bake-my-cake/build"
+
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
