@@ -1,11 +1,44 @@
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import './Navbar.css';
-import Button from "./Button"; // Assuming Button is in the same directory
 
-export default function Navbar({ setFilteredProduct }) { // Correct the component name to 'Navbar'
-    console.log("Navbar received setFileteredProduct:", typeof setFilteredProduct);
+const categories = [
+    { label: 'ALL', value: '' },
+    { label: 'CAKES', value: 'cakes' },
+    { label: 'CUPCAKES', value: 'cup cakes' },
+    { label: 'COOKIES', value: 'cookies' },
+    { label: 'BROWNIES', value: 'brownies' },
+    { label: 'CHOCOLATES', value: 'chocolates' },
+    { label: 'MUFFINS', value: 'muffins' },
+    { label: 'CHEESECAKES', value: 'cheese cakes' },
+];
+
+export default function Navbar({ setFilteredProduct }) {
+    const [active, setActive] = useState('');
+
+    const handleClick = (value) => {
+        setActive(value);
+        setFilteredProduct(value);
+    };
+
     return (
-        <div className='Navbar'>
-            <Button setFilteredProduct={setFilteredProduct} />
-        </div>
+        <nav className='Navbar'>
+            {categories.map(cat => (
+                <button
+                    key={cat.value}
+                    className={`nav-btn ${active === cat.value ? 'nav-btn-active' : ''}`}
+                    onClick={() => handleClick(cat.value)}
+                >
+                    {cat.label}
+                    {active === cat.value && (
+                        <motion.div
+                            className="nav-underline"
+                            layoutId="underline"
+                            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                        />
+                    )}
+                </button>
+            ))}
+        </nav>
     );
 }

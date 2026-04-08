@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+# 🎂 Bake My Cake — Phase I
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive React SPA for an online cake & bakery shop. Browse 54+ products across 8 categories, search, filter, add to cart, and checkout — all with smooth Framer Motion animations.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🖼️ Screenshots
 
-### `npm start`
+| Home | Filtered View |
+|------|--------------|
+| ![Home](../screenshots/Bake-My-Cake.png) | ![Brownies](../screenshots/Bake-My-Cake-filtered-brownies.png) |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Features
 
-### `npm test`
+- 🛍️ **54 products** across 8 categories (Cakes, Cupcakes, Cookies, Brownies, Chocolates, Muffins, Cheesecakes)
+- 🔍 **Search by name** — live filtering as you type
+- 🗂️ **Category filter** — animated navbar with active underline indicator
+- 🃏 **Flip-card product gallery** — hover to reveal description + Add to Cart
+- 🛒 **Shopping cart** — add, remove, quantity control, persistent state
+- 💳 **Checkout flow** — delivery address + dummy card payment form
+- 🎉 **Order success screen** — animated confirmation with order ID
+- 📱 **Fully responsive** — mobile-first design
+- ⚡ **Framer Motion** — smooth page & card animations
+- 🌐 **json-server REST API** — backend served on `localhost:5000`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React 18, Framer Motion, Axios |
+| Backend | json-server (REST mock API) |
+| Styling | Custom CSS (no framework) |
+| Data | 54-item `cakes.json` dataset |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📁 Folder Structure
 
-### `npm run eject`
+```
+bake-my-cake-phase-1/
+├── bake-my-cake/          # React frontend (CRA)
+│   ├── public/
+│   │   ├── images/        # Product images
+│   │   └── data/
+│   └── src/
+│       └── Components/
+│           ├── Header.js      # Logo + cart icon
+│           ├── Navbar.js      # Category filter buttons
+│           ├── MainContent.js # Hero + product grid
+│           ├── MainList.js    # Flip product card
+│           ├── Cart.js        # Slide-in cart drawer
+│           ├── Checkout.js    # Checkout modal
+│           └── Footer.js
+├── data/
+│   └── cakes.json         # json-server data source
+├── package.json           # json-server config
+└── routes.json
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ⚡ Quick Start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1. Start the Backend (json-server)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+cd bake-my-cake-phase-1
+npm install
+npm start
+# API running at http://localhost:5000/cakes
+```
 
-## Learn More
+### 2. Start the Frontend (React)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+cd bake-my-cake
+npm install
+npm start
+# App running at http://localhost:3000
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🔑 API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/cakes` | Get all products |
+| GET | `/cakes?category=brownies` | Filter by category |
+| GET | `/cakes/:id` | Get single product |
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📦 Sample Data Categories
 
-### Making a Progressive Web App
+| Category | Count |
+|----------|-------|
+| Cakes | 10 |
+| Cheese Cakes | 6 |
+| Cup Cakes | 8 |
+| Brownies | 6 |
+| Muffins | 6 |
+| Cookies | 6 |
+| Chocolates | 6 |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🚀 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Frontend → GitHub Pages / Netlify
 
-### Deployment
+```bash
+cd bake-my-cake
+npm run build
+# Deploy the /build folder to Netlify or GitHub Pages
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Backend → Railway / Render
 
-### `npm run build` fails to minify
+```bash
+# Push the root bake-my-cake-phase-1 folder
+# Set start command: npm start
+# json-server will serve on the assigned PORT
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 👨‍💻 Author
+
+**Srinidhi** · [GitHub](https://github.com/SRINIDHI-2524)
+
+---
+
+> Built as **Course End Project — Phase I** | React · json-server · Framer Motion
