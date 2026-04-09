@@ -1,7 +1,7 @@
 [build]
   base    = "bake-my-cake"
   command = "npm run build"
-  publish = "bake-my-cake/build"
+  publish = "build"
 
 [[redirects]]
   from   = "/*"
